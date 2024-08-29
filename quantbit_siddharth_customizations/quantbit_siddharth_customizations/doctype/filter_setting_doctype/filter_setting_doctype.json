@@ -3,6 +3,7 @@
  "allow_rename": 1,
  "autoname": "format:{doctype_name}-{docchild_name}{docfield_name}",
  "creation": "2024-08-28 15:19:04.471268",
+ "description": "//refer the following code\n\nfunction set_filters_for_doctype(doctype_name ,frm)  {\n    frappe.call({\n        method: \"frappe.client.get_list\",\n        args: {\n            doctype: \"Filter Setting DocType\",\n            filters: { \"doctype_name\": doctype_name },\n            fields: [\"docfield_name\",\"docchild_name\", \"doclink_name\", \"filterfield_name\", 'filterfield_type', 'filterfield_data' , 'filterfield_field'],\n        },\n        callback: function (response) {\n            if (response.message) {\n                let data = response.message;\n                data.forEach(function (item) {\n                    let field = item.docfield_name;\n                    let child_field = item.docchild_name\n                    let filter_arg\n                    if(item.filterfield_field)\n                        {\n                            filter_arg = frm.doc[item.filterfield_field];\n                        }\n                    else\n                        {\n                            filter_arg = item.filterfield_data;\n                        }\n\n\n                    let filter = [[item.doclink_name, item.filterfield_name, item.filterfield_type, filter_arg]];\n                    if(child_field)\n                        {\n                            frm.set_query(field,child_field, function() {return { filters: filter };});\n                        }\n                    else\n                        {\n                        frm.set_query(field, function () {return { filters: filter };});\n                        }\n                });\n            }\n        }\n    });\n};\n\nfrappe.ui.form.on('Supervisor Master', {\n    setup: function (frm) {\n        set_filters_for_doctype(frm.doctype, frm);\n        \n    },\n    foundry_unit: function (frm) {\n        set_filters_for_doctype(frm.doctype, frm);\n        \n    },\n});",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -99,7 +100,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-28 15:57:40.916758",
+ "modified": "2024-08-29 10:59:44.356675",
  "modified_by": "Administrator",
  "module": "Quantbit Siddharth Customizations",
  "name": "Filter Setting DocType",
