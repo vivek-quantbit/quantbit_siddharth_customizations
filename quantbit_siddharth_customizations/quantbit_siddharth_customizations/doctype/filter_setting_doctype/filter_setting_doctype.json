@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{doctype_name}-{docchild_name}{docfield_name}",
+ "creation": "2024-08-28 15:19:04.471268",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "doctype_name",
+  "column_break_uoirv",
+  "docchild_name",
+  "column_break_ucfaz",
+  "docfield_name",
+  "section_break_rj2f6",
+  "doclink_name",
+  "column_break_718v7",
+  "filterfield_name",
+  "column_break_kzjoc",
+  "filterfield_type",
+  "column_break_nm7nv",
+  "filterfield_data",
+  "column_break_xdff",
+  "filterfield_field"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctype_name",
+   "fieldtype": "Link",
+   "label": "DocType Name",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_uoirv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "docchild_name",
+   "fieldtype": "Data",
+   "label": "DocChild Name"
+  },
+  {
+   "fieldname": "column_break_ucfaz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "docfield_name",
+   "fieldtype": "Data",
+   "label": "DocField Name"
+  },
+  {
+   "fieldname": "section_break_rj2f6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "doclink_name",
+   "fieldtype": "Link",
+   "label": "DocLink Name",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_718v7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "filterfield_name",
+   "fieldtype": "Data",
+   "label": "FilterField Name"
+  },
+  {
+   "fieldname": "column_break_kzjoc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "filterfield_type",
+   "fieldtype": "Select",
+   "label": "FilterField Type",
+   "options": "=\n!=\nin\nnot in\n<\n>\n<=\n>="
+  },
+  {
+   "fieldname": "column_break_nm7nv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Enter filter data here if you want to add filter base data you provide",
+   "fieldname": "filterfield_data",
+   "fieldtype": "Data",
+   "label": "FilterField Data"
+  },
+  {
+   "fieldname": "column_break_xdff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Enter field name here if you want to add filter base on current DocTypes another field",
+   "fieldname": "filterfield_field",
+   "fieldtype": "Data",
+   "label": "FilterField Field"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-28 15:57:40.916758",
+ "modified_by": "Administrator",
+ "module": "Quantbit Siddharth Customizations",
+ "name": "Filter Setting DocType",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
